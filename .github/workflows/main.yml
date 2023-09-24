@@ -28,6 +28,11 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+    - name: auth
+      uses: google-github-actions/auth@v1
+      with:
+        # application_default_credentials.jsonを生成
+        credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
     - name: Build with Gradle
       uses: gradle/gradle-build-action@bd5760595778326ba7f1441bcf7e88b49de61a25 # v2.6.0
       with:
