@@ -38,3 +38,12 @@ jobs:
       with:
         # windowsからpushした場合`git update-index --chmod=+x gradlew`を実行する必要がある
         arguments: build
+
+    - name: deploy
+      uses: 'google-github-actions/deploy-cloudrun@v1'
+      with:
+        service: 'spring-boot-trial'
+        source: '.'
+
+    - name: Use output
+      run: 'curl "${{ steps.deploy.outputs.url }}"'
