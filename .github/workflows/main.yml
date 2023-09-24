@@ -43,7 +43,7 @@ jobs:
       uses: 'google-github-actions/deploy-cloudrun@v1'
       with:
         service: 'spring-boot-trial'
-        source: '.'
+        image: 'asia-northeast1-docker.pkg.dev/backflip270bb/container/spring-boot-trial'
         region: 'asia-northeast1'
 
     - name: Use output
