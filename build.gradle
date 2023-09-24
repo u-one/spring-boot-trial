@@ -27,6 +27,11 @@ dependencies {
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	// for firebase
+	implementation 'com.google.firebase:firebase-admin:9.2.0'
+	implementation 'com.google.cloud:spring-cloud-gcp-starter-data-firestore:2.0.11'
 }
 
 tasks.named('test') {
